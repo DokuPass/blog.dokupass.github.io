@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBL - Electronic Bill of Lading Software</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: #1a237e;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 35, 126, 0.9), rgba(26, 35, 126, 0.9)), url('/api/placeholder/1920/1080');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-slider {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .slide {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .disadvantages, .advantages {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .clients {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .client-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .growth-chart {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .support {
+            background: #1a237e;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .btn {
+            background: #ff4081;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #f50057;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">SmartBL</div>
+            <div class="nav-links">
+                <a href="#products">Products</a>
+                <a href="#demo">Demo</a>
+                <a href="#advantages">Benefits</a>
+                <a href="#clients">Clients</a>
+                <a href="#support">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Supply Chain with Electronic Bill of Lading</h1>
+            <p>Streamline documentation, reduce errors, and save time with our cutting-edge eBL solution powered by RFID technology</p>
+            <a href="#demo" class="btn">Request Demo</a>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <h3>SmartBL Essential</h3>
+                <p>Perfect for small to medium businesses</p>
+                <ul>
+                    <li>Digital BL creation and management</li>
+                    <li>Basic RFID integration</li>
+                    <li>Cloud storage and backup</li>
+                </ul>
+            </div>
+            <div class="product-card">
+                <h3>SmartBL Professional</h3>
+                <p>Ideal for large enterprises</p>
+                <ul>
+                    <li>Advanced RFID tracking</li>
+                    <li>Real-time analytics</li>
+                    <li>API integration</li>
+                </ul>
+            </div>
+            <div class="product-card">
+                <h3>SmartBL Enterprise</h3>
+                <p>Complete supply chain solution</p>
+                <ul>
+                    <li>Custom workflow automation</li>
+                    <li>Multi-location support</li>
+                    <li>24/7 premium support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="section">
+        <h2>Product Demo</h2>
+        <div class="demo-slider">
+            <div class="slide">
+                <h3>RFID Scanning Interface</h3>
+                <img src="/api/placeholder/800/400" alt="RFID scanning interface">
+                <p>Seamless scanning and data capture with our intuitive interface</p>
+            </div>
+            <div class="slide">
+                <h3>Document Management</h3>
+                <img src="/api/placeholder/800/400" alt="Document management">
+                <p>Efficient organization and retrieval of all your shipping documents</p>
+            </div>
+            <div class="slide">
+                <h3>Analytics Dashboard</h3>
+                <img src="/api/placeholder/800/400" alt="Analytics dashboard">
+                <p>Comprehensive insights into your shipping operations</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="disadvantages" class="section">
+        <h2>Challenges with Traditional Systems</h2>
+        <div class="disadvantages">
+            <ul>
+                <li>Time-consuming manual document processing</li>
+                <li>High risk of errors and document loss</li>
+                <li>Delayed shipments due to paperwork</li>
+                <li>Limited visibility and tracking</li>
+                <li>Environmental impact of paper usage</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="advantages" class="section">
+        <h2>Benefits of E-Billing with RFID</h2>
+        <div class="advantages">
+            <ul>
+                <li>Instant document creation and verification</li>
+                <li>Real-time cargo tracking and monitoring</li>
+                <li>Reduced processing time by up to 90%</li>
+                <li>Enhanced security and fraud prevention</li>
+                <li>Environmentally friendly paperless solution</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="clients" class="section">
+        <h2>Our Trusted Clients</h2>
+        <div class="clients">
+            <div class="client-card">
+                <img src="/api/placeholder/150/150" alt="Client 1">
+                <h3>Global Shipping Co.</h3>
+            </div>
+            <div class="client-card">
+                <img src="/api/placeholder/150/150" alt="Client 2">
+                <h3>Maritime Logistics</h3>
+            </div>
+            <div class="client-card">
+                <img src="/api/placeholder/150/150" alt="Client 3">
+                <h3>Ocean Freight Ltd.</h3>
+            </div>
+            <div class="client-card">
+                <img src="/api/placeholder/150/150" alt="Client 4">
+                <h3>Cargo Express</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="growth" class="section">
+        <h2>Industry Growth</h2>
+        <div class="growth-chart">
+            <canvas id="adoptionChart"></canvas>
+        </div>
+        <script>
+            const ctx = document.getElementById('adoptionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                    datasets: [{
+                        label: 'eBL Adoption Rate (%)',
+                        data: [10, 25, 45, 65, 80, 95],
+                        borderColor: '#1a237e',
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        </script>
+    </section>
+
+    <section id="support" class="support">
+        <h2>24/7 Support</h2>
+        <p>Our dedicated team is here to help you succeed</p>
+        <a href="#contact" class="btn">Contact Support</a>
+    </section>
+</body>
+</html>
