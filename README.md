@@ -1,2 +1,2 @@
-# landingpage
-GitHub Landing IO page
+# blogpage
+GitHub IO based blog page
